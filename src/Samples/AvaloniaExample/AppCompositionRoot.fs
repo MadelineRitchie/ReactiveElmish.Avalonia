@@ -10,6 +10,8 @@ type AppCompositionRoot private () =
 
     let mainView = MainView()
 
+    member val Id = System.Guid.NewGuid()
+    
     override this.RegisterServices services = 
         base.RegisterServices(services)
             .AddSingleton<FileService>(FileService(mainView))
