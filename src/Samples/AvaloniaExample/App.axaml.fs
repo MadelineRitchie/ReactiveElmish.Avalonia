@@ -18,6 +18,9 @@ type App() =
         match this.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktop ->         
             let appRoot = AppCompositionRoot.Instance
+            printfn $"%A{appRoot.Id}"
+            let appRoot = AppCompositionRoot.Instance
+            printfn $"%A{appRoot.Id}"
             desktop.MainWindow <- appRoot.GetView<ViewModels.MainViewModel>() :?> Window
         | _ -> 
             // leave this here for design view re-renders
